@@ -29,18 +29,18 @@ const ResidentCard = ({residentUrl}) => {
 
 return (
 
-    <article>
-        <div> 
-            <img src={ residentInfo?.image} alt="" />
-            <div className='flex items-center gap-2 p-2'>
+    <article className='min-w-[300px] rounded-[100px] bg-red-500'>
+        <div className='min-w-full flex flex-col p-2'> 
+            <img className='rounded-[100px]' src={ residentInfo?.image} alt="" />
+            <div className='flex items-center gap-2 p-2 justify-center'>
                 <div className={`h-[18px] aspect-square ${colorstatus(residentInfo?.status)} rounded-full`}></div>
                 <span>{residentInfo?.status}</span>
             </div>
         </div>
         
-        <div>
-            <h3>Name: {residentInfo?.name}</h3>
-            <div>
+        <div className='flex flex-col items-center justify-center text-center bg-slate-600 rounded-b-[100px]'>
+            <h3 className='font-bold'>Name: {residentInfo?.name}</h3>
+            <div className='grid gap-0.5 items-center'>
                 <span> Species: {residentInfo?.species}</span>
                 <span> Origin: {residentInfo?.origin.name}</span>
                 <span> Appearances: {residentInfo?.episode.length}</span>
