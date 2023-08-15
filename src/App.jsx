@@ -9,6 +9,8 @@ import getLocation from './utils/getLocation';
 function App() {
 
   const [currentLocation, setCurrentLocation] = useState(null);
+
+  const [residentShown, setResidentShown] = useState(10)
   
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -17,6 +19,12 @@ function App() {
     
   };
 
+  const handleResidentShown=(e)=>{
+    setResidentShown(e);
+  }
+
+
+
   useEffect(()=>{
     const RandomLocation=getRandomNumber(126);
     getLocation(RandomLocation,setCurrentLocation);
@@ -24,10 +32,13 @@ function App() {
   },[])
 
   return (
-    <main className='bg-black text-white flex flex-col items-center justify-center gap-2'>
-      <LocationForm handleSubmit={handleSubmit}/>
-      <LocationInfor currentLocation={currentLocation}/>
-      <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation}/>
+    <main className='bg-[url(./bgpage.png)] bg-cover text-white flex flex-col items-center justify-center gap-2 w-screen'>
+      <div className='bg-[url(./bgheader.png)] bg-cover bg-center sticky top-0 '>
+        <LocationForm handleSubmit={handleSubmit}/>
+        <LocationInfor currentLocation={currentLocation} residentShown={handleResidentShown}/>
+      </div>
+      
+      <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation} residentShown={residentShown}/>
     </main>
   )
 }

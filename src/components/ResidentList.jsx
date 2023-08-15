@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ResidentCard from './ResidentCard'
 
-const ResidentList = ({residents,currentLocation}) => {
+const ResidentList = ({residents,currentLocation,residentShown}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
-
-    const [residentShown, setResidentShown] = useState(5)
 
     const Residents_per_page=residentShown;
 
@@ -20,34 +18,15 @@ const ResidentList = ({residents,currentLocation}) => {
         Pages.push(i);
     }
 
-    const valueSlider=(e)=>{
-        e.preventDefault();
-        setResidentShown(e.target.value);
-    }
+    
 
     useEffect(()=>{
         setCurrentPage(1);
     },[currentLocation])
 
 return (
-    <section className='flex flex-col items-center gap-2 max-w-[1200px] w-screen'>
-        <div className='flex flex-col items-center justify-between gap-1 sticky top-[148px]'>
-            <h2 className='font-bold text-center text-[30px] p-2'>Residents List:</h2>
-            <form onChange={valueSlider} >
-                <label htmlFor="Nuresidents">Choose Number of Residents Shown: </label>
-                <div className='flex items-center justify-center'>
-                <input
-                    type="range"
-                    name="NumberRes"
-                    id="NumberRes"
-                    min="1"
-                    max="20"
-                    step="1"
-                    defaultValue="10" />
-                <output className="NuRe-output" htmlFor="Nuresidents">{residentShown}</output>
-                </div>
-            </form>
-        </div>
+    <section className='flex flex-col items-center gap-2 max-w-[1200px] w-screen '>
+        
         
         <section className='grid grid-cols-[repeat(auto-fit,_200px)] items-center justify-center gap-6 max-w-[1250px] w-screen mx-auto my-5'>
             {
