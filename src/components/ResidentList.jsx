@@ -34,7 +34,7 @@ return (
         <div className='flex flex-col items-center justify-between gap-1 sticky top-[148px]'>
             <h2 className='font-bold text-center text-[30px] p-2'>Residents List:</h2>
             <form onChange={valueSlider} >
-                <label for="Nuresidents">Choose Number of Residents Shown: </label>
+                <label htmlFor="Nuresidents">Choose Number of Residents Shown: </label>
                 <div className='flex items-center justify-center'>
                 <input
                     type="range"
@@ -43,8 +43,8 @@ return (
                     min="1"
                     max="20"
                     step="1"
-                    value="10" />
-                <output class="NuRe-output" for="Nuresidents">{residentShown}</output>
+                    defaultValue="10" />
+                <output className="NuRe-output" htmlFor="Nuresidents">{residentShown}</output>
                 </div>
             </form>
         </div>
