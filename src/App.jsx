@@ -24,7 +24,7 @@ function App() {
   },[])
 
   return (
-    <main className='bg-black min-w-320px text-white flex flex-col items-center justify-center gap-2'>
+    <main className='bg-black text-white flex flex-col items-center justify-center gap-2'>
       <LocationForm handleSubmit={handleSubmit}/>
       <LocationInfor currentLocation={currentLocation}/>
       <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation}/>

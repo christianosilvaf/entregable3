@@ -30,12 +30,12 @@ const ResidentList = ({residents,currentLocation}) => {
     },[currentLocation])
 
 return (
-    <section className='flex flex-col gap-2'>
-        <div className='flex flex-col items-center justify-between gap-1'>
-            <h2 className='font-bold text-center text-[50px] p-2 my-4'>Residents List:</h2>
+    <section className='flex flex-col items-center gap-2 max-w-[1200px] w-screen'>
+        <div className='flex flex-col items-center justify-between gap-1 sticky top-[148px]'>
+            <h2 className='font-bold text-center text-[30px] p-2'>Residents List:</h2>
             <form onChange={valueSlider} >
                 <label for="Nuresidents">Choose Number of Residents Shown: </label>
-                <div className='flex items-center justify-center my-3'>
+                <div className='flex items-center justify-center'>
                 <input
                     type="range"
                     name="NumberRes"
@@ -49,15 +49,15 @@ return (
             </form>
         </div>
         
-        <section className='grid auto-rows-max auto-cols-max items-center justify-center gap-5'>
+        <section className='grid grid-cols-[repeat(auto-fit,_200px)] items-center justify-center gap-6 max-w-[1250px] w-screen mx-auto my-5'>
             {
                 Residents_in_page.map((resident)=> 
                 <ResidentCard key={resident} residentUrl={resident}/>)
             }
         </section>
 
-        <section >
-            <ul className='flex items-center justify-between gap-2'>
+        <section className=' max-w-[720px] w-screen mx-auto'>
+            <ul className='grid grid-cols-[repeat(auto-fit,_50px)]  items-center justify-center  gap-2 '>
                 {
                     Pages.map((page)=>
                     <li className={`${currentPage===page && "text-red-500"} bg-green-400 w-[50px] h-[50px] text-center p-2 rounded-md text-[25px] my-2 font-medium`}
