@@ -28,10 +28,17 @@ return (
     <section className='flex flex-col items-center gap-2 max-w-[1200px] w-screen '>
         
         
-        <section className='grid grid-cols-[repeat(auto-fit,_200px)] items-center justify-center gap-6 max-w-[1250px] w-screen mx-auto my-5'>
+        <section>
             {
-                Residents_in_page.map((resident)=> 
-                <ResidentCard key={resident} residentUrl={resident}/>)
+                Residents_in_page==0 ?
+                <div className='bg-[url(./empty3.png)] bg-cover bg-center w-screen h-[500px]'>
+                    <span> Ups! Aqui no hay nada...</span>
+                </div>
+                :
+                <section className='grid grid-cols-[repeat(auto-fit,_200px)] items-center justify-center gap-6 max-w-[1250px] w-screen mx-auto my-5'>
+                {Residents_in_page.map((resident)=>(
+                <ResidentCard key={resident} residentUrl={resident}/>))}
+                </section>
             }
         </section>
 
@@ -39,7 +46,7 @@ return (
             <ul className='grid grid-cols-[repeat(auto-fit,_50px)]  items-center justify-center  gap-2 '>
                 {
                     Pages.map((page)=>
-                    <li className={`${currentPage===page && "text-white drop-shadow-[0_0_5px_#14f626] bg-black"} bg-green-400 w-[35px] h-[35px] text-center p-2 rounded-md text-[18px] my-1 font-medium cursor-pointer`}
+                    <li className={`${currentPage===page && "text-white drop-shadow-[0_0_5px_#eec400]"} bg-green-400 w-[35px] h-[35px] text-center p-2 rounded-md text-[18px] my-1 font-medium cursor-pointer`}
                         onClick={()=>setCurrentPage(page)} 
                         key={page}> 
                         {page} 

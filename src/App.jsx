@@ -30,7 +30,7 @@ function App() {
     console.log("scrolling")
   };
 
-  console.log(scrollTop);
+
 
   useEffect(()=>{
     const RandomLocation=getRandomNumber(126);
@@ -46,7 +46,7 @@ function App() {
       </div>
       <div className='sticky top-0  bg-gradient-radial from-[#14f626] to-Transparent' >
         <LocationForm handleSubmit={handleSubmit}/>
-        <LocationInfor currentLocation={currentLocation} residentShown={handleResidentShown}/>
+        <LocationInfor currentLocation={currentLocation} residentShown={handleResidentShown} Nureshown={residentShown}/>
       </div>
       
       <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation} residentShown={residentShown}/>
