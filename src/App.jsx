@@ -41,7 +41,7 @@ function App() {
   return (
     <main className='bg-[url(./bgpage.png)] bg-cover text-white flex flex-col items-center justify-center gap-2 w-screen' 
       onScroll={handleScroll}>
-      <div className='w-[1000px] h-[200px] top-0 left-10'>
+      <div className='w-1/1'>
         <img src="/headerimg.png" alt="" className=''/>
       </div>
       <div className='sticky top-0  bg-gradient-radial from-[#14f626] to-Transparent' >
