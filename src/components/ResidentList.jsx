@@ -39,7 +39,7 @@ return (
             <ul className='grid grid-cols-[repeat(auto-fit,_50px)]  items-center justify-center  gap-2 '>
                 {
                     Pages.map((page)=>
-                    <li className={`${currentPage===page && "text-red-500"} bg-green-400 w-[50px] h-[50px] text-center p-2 rounded-md text-[25px] my-2 font-medium`}
+                    <li className={`${currentPage===page && "text-white drop-shadow-[0_0_5px_#14f626] bg-black"} bg-green-400 w-[35px] h-[35px] text-center p-2 rounded-md text-[18px] my-1 font-medium cursor-pointer`}
                         onClick={()=>setCurrentPage(page)} 
                         key={page}> 
                         {page} 

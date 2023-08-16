@@ -9,10 +9,10 @@ const LocationForm = ({handleSubmit}) => {
         <form onSubmit={handleSubmit} className='flex gap-3'>
             <input className="text-black min-w-[250px] max-w-[700px]" 
             min={1} max={126} 
-            placeholder="Typea location id..." 
+            placeholder="Type a location id..." 
             type="number" 
-            id="SearchingLoc"/>
-            <button className='p-2 bg-emerald-400'>Search</button>
+            id="SearchingLoc" required/>
+            <button className='p-2 bg-black ring-2 ring-[#14f626] drop-shadow-[0_0_5px_#14f626]'>Search</button>
         </form>
     </div>
 )
