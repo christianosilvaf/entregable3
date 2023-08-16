@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import ResidentCard from './ResidentCard'
 
-const ResidentList = ({residents,currentLocation,residentShown}) => {
+const ResidentList = ({residents,currentLocation,residentShown,handleResidentShown}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
 
-    const Residents_per_page=residentShown;
+    let Residents_per_page=residentShown;
 
-    const TotalPages= Math.ceil(residents.length / Residents_per_page);
+    let TotalPages= Math.ceil(residents.length / Residents_per_page);
 
-    const sliceStart= (currentPage-1)*Residents_per_page;
-    const sliceEnd= sliceStart+Residents_per_page;
-    const Residents_in_page= residents.slice(sliceStart,sliceEnd);
+    let sliceStart= (currentPage-1)*Residents_per_page;
+    let sliceEnd= sliceStart+Residents_per_page;
+    let Residents_in_page= residents.slice(sliceStart,sliceEnd);
 
-    const Pages=[];
+    let Pages=[];
     for(let i=1;i<=TotalPages;i++){
         Pages.push(i);
     }
@@ -35,7 +35,7 @@ return (
                     <span className='text-[50px]'> Ups! Aqui no hay nada...</span>
                 </div>
                 :
-                <section className='grid grid-cols-[repeat(auto-fit,_200px)] items-center justify-center gap-6 max-w-[1250px] w-screen mx-auto my-5'>
+                <section className='grid grid-cols-[repeat(auto-fit,_200px)]  max-[400px]:flex max-[400px]:flex-col max-[400px]:m-auto  items-center justify-center gap-6 max-w-[1250px] w-screen mx-auto my-5'>
                 {Residents_in_page.map((resident)=>(
                 <ResidentCard key={resident} residentUrl={resident}/>))}
                 </section>
@@ -43,11 +43,11 @@ return (
         </section>
 
         <section className=' max-w-[720px] w-screen mx-auto'>
-            <ul className='grid grid-cols-[repeat(auto-fit,_50px)]  items-center justify-center  gap-2 '>
+            <ul className='grid grid-cols-[repeat(auto-fit,_50px)]    items-center justify-center  gap-2 '>
                 {
                     Pages.map((page)=>
                     <li className={`${currentPage===page && "text-white drop-shadow-[0_0_5px_#eec400]"} bg-green-400 w-[35px] h-[35px] text-center p-2 rounded-md text-[18px] my-1 font-medium cursor-pointer`}
-                        onClick={()=>setCurrentPage(page)} 
+                        onClick={()=>(setCurrentPage(page),handleResidentShown)} 
                         key={page}> 
                         {page} 
                     </li>

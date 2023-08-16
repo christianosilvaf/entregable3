@@ -44,12 +44,12 @@ function App() {
       <div className='w-1/1 -top-200'>
         <img src="/headerimg.png" alt="" className=''/>
       </div>
-      <div className='sticky top-0  bg-gradient-radial from-[#14f626] to-Transparent' >
+      <div className='sticky top-0  bg-gradient-radial from-[#14f626] to-Transparent max-[400px]:max-w-[350px]' >
         <LocationForm handleSubmit={handleSubmit}/>
         <LocationInfor currentLocation={currentLocation} residentShown={handleResidentShown} Nureshown={residentShown}/>
       </div>
       
-      <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation} residentShown={residentShown}/>
+      <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation} handleresidentShown={handleResidentShown} residentShown={residentShown}/>
     </main>
   )
 }

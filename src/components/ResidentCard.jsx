@@ -33,9 +33,9 @@ const ResidentCard = ({residentUrl}) => {
 
 return (
 
-    <article className='flex flex-col gap-0 min-w-[200px] rounded-[100px] h-[420px] ring-2 ring-[#14f626] bg-black/50'>
-        <div className='min-w-full flex flex-col p-2'> 
-            <img className={`rounded-[100px] ${colorstatus(residentInfo?.status)[1]}`} src={ residentInfo?.image} alt="" />
+    <article className='flex flex-col gap-0 w-[200px] rounded-[100px] h-[420px] ring-2 ring-[#14f626] bg-black/50 max-[400px]:flex-row max-[400px]:w-[350px] max-[400px]:h-[220px] max-[400px]:p-4'>
+        <div className='max-[350px]:h-1/1 max-[400px]:w-1/2 flex flex-col p-2'> 
+            <img className={`rounded-[200px] overflow-hidden ${colorstatus(residentInfo?.status)[1]}`} src={ residentInfo?.image} alt="" />
             <div className='flex items-center gap-2 p-1 justify-center'>
                 <div className={`h-[20px] aspect-square ${colorstatus(residentInfo?.status)[0]} rounded-full`}></div>
                 <span className='text-[15px]'>{residentInfo?.status}</span>

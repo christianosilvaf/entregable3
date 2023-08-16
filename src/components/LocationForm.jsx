@@ -5,9 +5,9 @@ const LocationForm = ({handleSubmit}) => {
 
 
     return (
-    <div className='flex items-center justify-center p-2 gap-3 h-16 min-w-[400px] w-screen mx-auto'>
+    <div className='flex items-center justify-center p-2 gap-3 h-16 min-w-[400px] w-screen mx-auto max-[400px]:min-w-[250px]'>
         <form onSubmit={handleSubmit} className='flex gap-3'>
-            <input className="text-black min-w-[250px] max-w-[700px]" 
+            <input className="text-black min-w-[250px]  text-center max-w-[700px] max-[400px]:min-w-[200px]" 
             min={1} max={126} 
             placeholder="Type a location id..." 
             type="number" 
