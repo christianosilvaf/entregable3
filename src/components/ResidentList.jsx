@@ -31,8 +31,8 @@ return (
         <section>
             {
                 Residents_in_page==0 ?
-                <div className='bg-[url(./empty3.png)] bg-cover bg-center w-screen h-[500px]'>
-                    <span> Ups! Aqui no hay nada...</span>
+                <div className='bg-[url(/empty3.png)] bg-cover bg-center h-[600px] '>
+                    <span className='text-[50px]'> Ups! Aqui no hay nada...</span>
                 </div>
                 :
                 <section className='grid grid-cols-[repeat(auto-fit,_200px)] items-center justify-center gap-6 max-w-[1250px] w-screen mx-auto my-5'>

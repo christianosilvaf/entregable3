@@ -39,9 +39,9 @@ function App() {
   },[])
 
   return (
-    <main className='bg-[url(./bgpage.png)] bg-cover text-white flex flex-col items-center justify-center gap-2 w-screen' 
+    <main className='bg-[url(/bgpage.png)] bg-cover  text-white flex flex-col items-center justify-center gap-2 w-screen' 
       onScroll={handleScroll}>
-      <div className='w-1/1'>
+      <div className='w-1/1 -top-200'>
         <img src="/headerimg.png" alt="" className=''/>
       </div>
       <div className='sticky top-0  bg-gradient-radial from-[#14f626] to-Transparent' >

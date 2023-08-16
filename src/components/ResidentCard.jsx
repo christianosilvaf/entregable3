@@ -33,7 +33,7 @@ const ResidentCard = ({residentUrl}) => {
 
 return (
 
-    <article className='flex flex-col gap-0 min-w-[200px] rounded-[100px] h-[410px] ring-2 ring-[#14f626] bg-black/50'>
+    <article className='flex flex-col gap-0 min-w-[200px] rounded-[100px] h-[420px] ring-2 ring-[#14f626] bg-black/50'>
         <div className='min-w-full flex flex-col p-2'> 
             <img className={`rounded-[100px] ${colorstatus(residentInfo?.status)[1]}`} src={ residentInfo?.image} alt="" />
             <div className='flex items-center gap-2 p-1 justify-center'>
@@ -46,8 +46,8 @@ return (
             <h3 className='font-bold drop-shadow-[0_0_5px_#14f626] text-[18px]'>Name: <br /> {residentInfo?.name}</h3>
             <div className='grid gap-0.5 items-center text-[11px]'>
                 <div className='flex flex-col'><span className='drop-shadow-[0_0_2px_#14f626]'> SPECIES: </span> <span>{residentInfo?.species}</span></div>
-                <div className='flex flex-col'><span className='drop-shadow-[0_0_2px_#14f626]'> ORIGIN: </span> <span>{residentInfo?.origin.name}</span></div>
-                <div className='flex'><span className='drop-shadow-[0_0_2px_#14f626]'> APPEARANCES: </span> <span>{residentInfo?.episode.length}</span></div>
+                <div className='flex flex-col'><span className='drop-shadow-[0_0_2px_#14f626]'> ORIGIN: </span> <span className='text-[10px]'>{residentInfo?.origin.name}</span></div>
+                <div className='flex items-center justify-center'><span className='drop-shadow-[0_0_2px_#14f626]'> APPEARANCES: </span> <span>{residentInfo?.episode.length}</span></div>
             </div>
 
         </div>
