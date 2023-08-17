@@ -20,7 +20,7 @@ const ResidentList = ({residents, currentLocation, resident_Shown}) => {
 
     useEffect(()=>{
         setCurrentPage(1);
-    },[currentLocation])
+    },[currentLocation,resident_Shown])
 
 return (
     <section className='flex flex-col items-center gap-2 max-w-[1200px] w-screen '>
