@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import ResidentCard from './ResidentCard'
 
-const ResidentList = ({residents,currentLocation,residentShown,handleResidentShown}) => {
+const ResidentList = ({residents, currentLocation, resident_Shown}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
 
-    let Residents_per_page=residentShown;
+    const TotalPages= Math.ceil(residents.length / resident_Shown);
 
-    let TotalPages= Math.ceil(residents.length / Residents_per_page);
+    const sliceStart= (currentPage-1)*resident_Shown;
+    const sliceEnd= sliceStart+resident_Shown;
+    const Residents_in_page= residents.slice(sliceStart,sliceEnd);
 
-    let sliceStart= (currentPage-1)*Residents_per_page;
-    let sliceEnd= sliceStart+Residents_per_page;
-    let Residents_in_page= residents.slice(sliceStart,sliceEnd);
-
-    let Pages=[];
+    const Pages=[];
     for(let i=1;i<=TotalPages;i++){
         Pages.push(i);
     }
@@ -46,8 +44,8 @@ return (
             <ul className='grid grid-cols-[repeat(auto-fit,_50px)]    items-center justify-center  gap-2 '>
                 {
                     Pages.map((page)=>
-                    <li className={`${currentPage===page && "text-white drop-shadow-[0_0_5px_#eec400]"} bg-green-400 w-[35px] h-[35px] text-center p-2 rounded-md text-[18px] my-1 font-medium cursor-pointer`}
-                        onClick={()=>(setCurrentPage(page),handleResidentShown)} 
+                    <li className={`${currentPage==page && "text-white drop-shadow-[0_0_5px_#eec400]"} bg-green-400 w-[35px] h-[35px] text-center p-2 rounded-md text-[18px] my-1 font-medium cursor-pointer`}
+                        onClick={()=> {setCurrentPage(page), console.log(resident_Shown, sliceStart, sliceEnd)}} 
                         key={page}> 
                         {page} 
                     </li>

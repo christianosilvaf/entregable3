@@ -23,6 +23,7 @@ function App() {
 
   const handleResidentShown=(e)=>{
     setResidentShown(e);
+    console.log(residentShown,e)
   }
 
   const handleScroll = event => {
@@ -46,10 +47,10 @@ function App() {
       </div>
       <div className='sticky top-0  bg-gradient-radial from-[#14f626] to-Transparent max-[400px]:max-w-[350px]' >
         <LocationForm handleSubmit={handleSubmit}/>
-        <LocationInfor currentLocation={currentLocation} residentShown={handleResidentShown} Nureshown={residentShown}/>
+        <LocationInfor currentLocation={currentLocation} residentShown={handleResidentShown}/>
       </div>
       
-      <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation} handleresidentShown={handleResidentShown} residentShown={residentShown}/>
+      <ResidentList residents={currentLocation?.residents ?? []} currentLocation={currentLocation} resident_Shown={residentShown}/>
     </main>
   )
 }

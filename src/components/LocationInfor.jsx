@@ -1,11 +1,10 @@
 import React from 'react'
 
-const LocationInfor = ({currentLocation,residentShown,Nureshown}) => {
+const LocationInfor = ({currentLocation,residentShown}) => {
 
 
     const valueSlider=(e)=>{
-        e.preventDefault();
-        residentShown(e.target.value);
+        residentShown(parseInt(e.target.value))
     }
 
 
@@ -34,7 +33,7 @@ const LocationInfor = ({currentLocation,residentShown,Nureshown}) => {
                     max="20"
                     step="1"
                     defaultValue="10" />
-                <output className="NuRe-output" htmlFor="Nuresidents">{Nureshown}</output>
+                <output className="NuRe-output" htmlFor="Nuresidents"></output>
                 </div>
             </form>
         </div>
